@@ -17,6 +17,8 @@ func main() {
 	}
 
 	dat2 := AMJ.Hextodec(string(dat))
+	dat2 = AMJ.Bintodec(string(dat2))
+	dat2 = AMJ.Alphabetformat(string(dat2))
 
 	err = os.WriteFile(output, []byte(dat2), 0644)
 	if err != nil {
