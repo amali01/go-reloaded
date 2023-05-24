@@ -1,12 +1,24 @@
 package main
 
-import {
+import (
 	"fmt"
 	"os"
-	"AMJ"
-}
+)
 
-func main {
-	input := os.Open("input.txt")  //open the file
-	
+func main() {
+	input := os.Args[1]
+	output := os.Args[2]
+
+	dat, err := os.ReadFile(input)
+	if err != nil {
+		panic(err)
+	}
+
+	err = os.WriteFile(output, []byte(dat), 0644)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Print(string(dat))
+
 }
