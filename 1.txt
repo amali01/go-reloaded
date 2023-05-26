@@ -1,0 +1,33 @@
+package main
+
+import (
+	"fmt"
+	"regexp"
+)
+
+// formatPunctuation formats the punctuation marks in a string
+func formatPunctuation(s string) string {
+	// use regular expressions to match and replace the punctuation marks
+	re1 := regexp.MustCompile(`\s*([.,!?:;])`) // match any spaces around single punctuation marks
+	re2 := regexp.MustCompile(`'\s*(.*?)\s*'`) // match any spaces between ' marks
+
+	s = re1.ReplaceAllString(s, "$1")                    // replace the spaces with one space after the punctuation mark
+	s = re2.ReplaceAllString(s, "'$1'")                  // replace the spaces with no spaces around the ' marks
+	re3 := regexp.MustCompile(`([.,!?:;])([[:alpha:]])`) // match any spaces around single punctuation marks
+	fmt.Println(s)
+	s = re3.ReplaceAllString(s, "$1 $2") // replace the spaces with one space after the punctuation mark
+	return s
+}
+
+func main() {
+	// test cases
+	test1 := "Punctuation tests are ... kinda boring ,don't you think !?"
+	test2 := "I am exactly how they describe me: ' awesome '"
+	test3 := "As Elton John said: ' I am the most well-known homosexual in the world '"
+	test4 := "I was thinking ... You were right"
+
+	fmt.Println(formatPunctuation(test1)) // I was sitting over there, and then BAMM!!
+	fmt.Println(formatPunctuation(test2)) // I am exactly how they describe me: 'awesome'
+	fmt.Println(formatPunctuation(test3)) // As Elton John said: 'I am the most well-known homosexual in the world'
+	fmt.Println(formatPunctuation(test4)) // I was thinking... You were right
+}
