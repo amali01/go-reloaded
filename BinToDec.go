@@ -4,6 +4,7 @@ import (
 	"strconv"
 	"strings"
 	"fmt"
+	"os"
 )
 func Bintodec(s string) string {
 	word := strings.Fields(s)
@@ -20,14 +21,12 @@ func Bintodec(s string) string {
 			decimal_num, err = strconv.ParseInt(binary_num, 2, 64)
 			// in case of any error
 			if err != nil {
-				fmt.Printf("Error5")
-				return("Error")
+				fmt.Printf("wrong BIN entry")
+				os.Exit(0)
 			}
 			word[i-1] = strconv.FormatInt(decimal_num, 10)
 
 		}
 	}
-	temp := strings.Join(word, " ")
-	word = strings.Fields(temp)
 	return strings.Join(word, " ")
 }

@@ -20,7 +20,5 @@ func Atoan(s string) string {
 		}
 		
 	}
-	temp := strings.Join(word, " ")
-	word = strings.Fields(temp)
 	return strings.Join(word, " ")
 }

@@ -4,6 +4,8 @@ package AMJ
 import (
 	"strings"
 	"strconv"
+	"fmt"
+	"os"
 )
 
 // calling the main function
@@ -14,9 +16,11 @@ func AlphabetNum(s string) string {
 			// initialize the capitalized
 			count, err := strconv.Atoi(strings.TrimRight(word[i+1], ")"))
 			if err != nil {
-				return("Error during conversion")
+				fmt.Printf("Error during conversion")
+				os.Exit(0)
 			}else if count > i-1 {
-				return("Error outof range number for CAPs")
+				fmt.Printf("Error outof range number for CAPs")
+				os.Exit(0)
 			}
 			word[i+1] = ""
 			word[i] = ""
@@ -29,9 +33,11 @@ func AlphabetNum(s string) string {
 			// initialize the uppercase
 			count, err := strconv.Atoi(strings.TrimRight(word[i+1], ")"))
 			if err != nil {
-				return("Error during conversion")
+				fmt.Printf("Error during conversion")
+				os.Exit(0)
 			}else if count > i-1 {
-				return("Error outof range number for UP")
+				fmt.Printf("Error outof range number for UP")
+				os.Exit(0)
 			}
 			word[i+1] = ""
 			word[i] = ""
@@ -44,9 +50,11 @@ func AlphabetNum(s string) string {
 			// initialize the lowercase
 			count, err := strconv.Atoi(strings.TrimRight(word[i+1], ")"))
 			if err != nil {
-				return("Error during conversion")
+				fmt.Printf("Error during conversion")
+				os.Exit(0)
 			}else if count > i-1 {
-				return("Error outof range number for LOW")
+				fmt.Printf("Error outof range number for LOW")
+				os.Exit(0)
 			}
 			word[i+1] = ""
 			word[i] = ""
@@ -55,7 +63,5 @@ func AlphabetNum(s string) string {
 			}
 		}
 	}
-	temp := strings.Join(word, " ")
-	word = strings.Fields(temp)
 	return strings.Join(word, " ")
 }

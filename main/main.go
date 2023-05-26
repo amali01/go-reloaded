@@ -12,13 +12,16 @@ func main() {
 	args := os.Args[1:]
 	if len(args) !=2 { 
 		fmt.Printf("Make sure add the correct amount of Args")
-		return
+		os.Exit(0)
 	}
 
 	dat, err := os.ReadFile(input)
 	if err != nil {
-		fmt.Printf("Error1")
-		return
+		fmt.Printf("Make sure u have a correct input")
+		os.Exit(0)
+	}else if len(dat) == 0 {
+		fmt.Printf("You sample File is Empty")
+		os.Exit(0)
 	}
 
 	dat2 := AMJ.Hextodec(string(dat))
@@ -30,8 +33,8 @@ func main() {
 
 	err = os.WriteFile(output, []byte(dat2), 0644)
 	if err != nil {
-		fmt.Printf("Error2")
-		return
+		fmt.Printf("somthing wrong with the output")
+		os.Exit(0)
 	}
 
 	fmt.Print(string(dat2))

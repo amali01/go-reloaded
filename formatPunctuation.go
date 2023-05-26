@@ -10,9 +10,12 @@ func FormatPunctuation(s string) string {
 	re1 := regexp.MustCompile(`\s*([.,!?:;])`)           // match any spaces around single punctuation marks
 	re2 := regexp.MustCompile(`'\s*(.*?)\s*'`)           // match any spaces between ' marks
 	re3 := regexp.MustCompile(`([.,!?:;])([[:alpha:]])`) // match any spaces around single punctuation marks
+	//re4 := regexp.MustCompile(`\s+`) // match any group of spaces
 
 	s = re1.ReplaceAllString(s, "$1")    // replace the spaces with one space after the punctuation mark
 	s = re2.ReplaceAllString(s, "'$1'")  // replace the spaces with no spaces around the ' marks
 	s = re3.ReplaceAllString(s, "$1 $2") // replace the spaces with one space after the punctuation mark
+	//s = re4.ReplaceAllString(s, " ") // replace the group of spaces with one space 
+
 	return s
 }

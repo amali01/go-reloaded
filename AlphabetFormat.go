@@ -25,7 +25,5 @@ func Alphabetformat(s string) string {
 			word[i] = ""
 		}
 	}
-	temp := strings.Join(word, " ")
-	word = strings.Fields(temp)
 	return strings.Join(word, " ")
 }
