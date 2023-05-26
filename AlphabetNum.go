@@ -18,7 +18,7 @@ func AlphabetNum(s string) string {
 			if err != nil {
 				fmt.Printf("Error during conversion")
 				os.Exit(0)
-			}else if count > i-1 {
+			}else if count > i {
 				fmt.Printf("Error outof range number for CAPs")
 				os.Exit(0)
 			}
@@ -35,7 +35,7 @@ func AlphabetNum(s string) string {
 			if err != nil {
 				fmt.Printf("Error during conversion")
 				os.Exit(0)
-			}else if count > i-1 {
+			}else if count > i {
 				fmt.Printf("Error outof range number for UP")
 				os.Exit(0)
 			}
@@ -52,7 +52,7 @@ func AlphabetNum(s string) string {
 			if err != nil {
 				fmt.Printf("Error during conversion")
 				os.Exit(0)
-			}else if count > i-1 {
+			}else if count > i {
 				fmt.Printf("Error outof range number for LOW")
 				os.Exit(0)
 			}

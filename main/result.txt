@@ -1,1 +1,1 @@
-Simply add 66 and 2 and you will see the result is 68.
+: 'I am an optimist, but an optimist who carries an araincat.' harold
