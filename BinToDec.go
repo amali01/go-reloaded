@@ -21,7 +21,7 @@ func Bintodec(s string) string {
 			decimal_num, err = strconv.ParseInt(binary_num, 2, 64)
 			// in case of any error
 			if err != nil {
-				fmt.Printf("wrong BIN entry")
+				fmt.Println("wrong BIN entry")
 				os.Exit(0)
 			}
 			word[i-1] = strconv.FormatInt(decimal_num, 10)

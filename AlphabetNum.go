@@ -16,10 +16,10 @@ func AlphabetNum(s string) string {
 			// initialize the capitalized
 			count, err := strconv.Atoi(strings.TrimRight(word[i+1], ")"))
 			if err != nil {
-				fmt.Printf("Error during conversion")
+				fmt.Println("Error during conversion")
 				os.Exit(0)
 			}else if count > i {
-				fmt.Printf("Error outof range number for CAPs")
+				fmt.Println("Error outof range number for CAPs")
 				os.Exit(0)
 			}
 			word[i+1] = ""
@@ -33,10 +33,10 @@ func AlphabetNum(s string) string {
 			// initialize the uppercase
 			count, err := strconv.Atoi(strings.TrimRight(word[i+1], ")"))
 			if err != nil {
-				fmt.Printf("Error during conversion")
+				fmt.Println("Error during conversion")
 				os.Exit(0)
 			}else if count > i {
-				fmt.Printf("Error outof range number for UP")
+				fmt.Println("Error outof range number for UP")
 				os.Exit(0)
 			}
 			word[i+1] = ""
@@ -50,10 +50,10 @@ func AlphabetNum(s string) string {
 			// initialize the lowercase
 			count, err := strconv.Atoi(strings.TrimRight(word[i+1], ")"))
 			if err != nil {
-				fmt.Printf("Error during conversion")
+				fmt.Println("Error during conversion")
 				os.Exit(0)
 			}else if count > i {
-				fmt.Printf("Error outof range number for LOW")
+				fmt.Println("Error outof range number for LOW")
 				os.Exit(0)
 			}
 			word[i+1] = ""

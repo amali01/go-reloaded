@@ -24,7 +24,7 @@ func Hextodec(s string) string {
 			decimal_num, err = strconv.ParseInt(hexadecimal_num, 16, 64)
 			// in case of any error
 			if err != nil {
-				fmt.Printf("wrong HEX entry")
+				fmt.Println("wrong HEX entry")
 				os.Exit(0)
 			}
 			word[i-1] = strconv.FormatInt(decimal_num, 10)
