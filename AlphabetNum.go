@@ -2,10 +2,10 @@ package AMJ
 
 //import the required packages
 import (
-	"strings"
-	"strconv"
 	"fmt"
 	"os"
+	"strconv"
+	"strings"
 )
 
 // calling the main function
@@ -18,13 +18,13 @@ func AlphabetNum(s string) string {
 			if err != nil {
 				fmt.Println("Error during conversion")
 				os.Exit(0)
-			}else if count > i {
+			} else if count > i {
 				fmt.Println("Error outof range number for CAPs")
 				os.Exit(0)
 			}
 			word[i+1] = ""
 			word[i] = ""
-			for j := 1 ; j <= count ; j++{
+			for j := 1; j <= count; j++ {
 				word[i-j] = strings.Title(word[i-j])
 			}
 
@@ -35,13 +35,13 @@ func AlphabetNum(s string) string {
 			if err != nil {
 				fmt.Println("Error during conversion")
 				os.Exit(0)
-			}else if count > i {
+			} else if count > i {
 				fmt.Println("Error outof range number for UP")
 				os.Exit(0)
 			}
 			word[i+1] = ""
 			word[i] = ""
-			for j := 1 ; j <= count ; j++{
+			for j := 1; j <= count; j++ {
 				word[i-j] = strings.ToUpper(word[i-j])
 			}
 
@@ -52,16 +52,18 @@ func AlphabetNum(s string) string {
 			if err != nil {
 				fmt.Println("Error during conversion")
 				os.Exit(0)
-			}else if count > i {
+			} else if count > i {
 				fmt.Println("Error outof range number for LOW")
 				os.Exit(0)
 			}
 			word[i+1] = ""
 			word[i] = ""
-			for j := 1 ; j <= count ; j++{
+			for j := 1; j <= count; j++ {
 				word[i-j] = strings.ToLower(word[i-j])
 			}
 		}
 	}
+	temp := strings.Join(word, " ")
+	word = strings.Fields(temp)
 	return strings.Join(word, " ")
 }
